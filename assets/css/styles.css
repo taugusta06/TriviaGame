@@ -1,0 +1,35 @@
+body{
+    background: black;
+}
+
+.container{
+    height: 410px;
+    width: 550px;
+    /* position: absolute; */
+    /* left: 45%; */
+    padding: 20px;
+
+}
+
+.spacer{
+    height: 150px;
+}
+#question{
+    padding: 10px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    text-transform: uppercase;
+    color: purple;
+    
+}
+
+.option{
+    width: 450px;
+    display: inline-block;
+    padding: 10px 0 10px 15px;
+    vertical-align: middle;
+    background: darkgray 0.5;
+    color: purple;
+    
+}
