@@ -91,8 +91,9 @@ var showScore = document.getElementById('result');
 //create a function to load the questions from the answers array
 //make sure first question loads on start
 
-function loadQuest(questionIndex){
-    var q = questOpts[questionIndex];
+var i = 0;
+function loadQuest(Index){
+    var q = questOpts[i];
     questionBox.textContent = q.question;
     opt1.textContent = q.option1;
     opt2.textContent = q.option2;
@@ -110,7 +111,7 @@ function loadNext(){
     var selectedAns = document.querySelector('input[type=radio]:checked');
     if(!selectedAns){
         // document.getElementById("p1").innerHTML = "New text!"
-        document.getElementsByClassName("errormsg").innerHTML = "Please Select An Answer!";
+        document.getElementById("errorMsg").innerHTML = "<b>Please Select An Answer!</b>";
         return;
     }
 //set function to calculate running score
@@ -120,6 +121,7 @@ function loadNext(){
     }
 //clear selected option before moving forward
     selectedAns.checked = false;
+    document.getElementById("errorMsg").innerHTML = ""
     currentQuestion++
 //show finish screen when all questions are answered and hide question screen
     if(currentQuestion == totalQuestions){
@@ -129,6 +131,7 @@ function loadNext(){
         return;
     }
     else {
+        i++
         loadQuest(currentQuestion);
     }
 
